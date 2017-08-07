@@ -3,7 +3,7 @@ require 'net/http'
 require 'json'
 module Palladium
   def self.new(options = {})
-   Palladium::Palladium.new(options)
+   Palladium.new(options)
   end
 
   class Palladium
