@@ -2,6 +2,10 @@ require 'palladium/version'
 require 'net/http'
 require 'json'
 module Palladium
+  def self.new(options = {})
+   Palladium::Palladium.new(options)
+  end
+
   class Palladium
     def initialize(options = {})
       options[:port] ||= 80
