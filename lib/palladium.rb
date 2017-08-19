@@ -21,7 +21,7 @@ module Palladium
       request = Net::HTTP::Post.new('/api/result_new', 'Authorization' => @token)
       params = { 'plan_data[product_name]' => @product,
                  'plan_data[name]' => @plan,
-                 'run_data[name]' => 'multiplication_products1',
+                 'run_data[name]' => @run,
                  'result_set_data[name]' => options[:name],
                  'result_data[message]' => options[:description],
                  'result_data[status]' => options[:status] }
