@@ -10,6 +10,7 @@ module Palladium
     def initialize(options = {})
       options[:port] ||= 80
       @http = Net::HTTP.new(options[:host], options[:port])
+      @host = options[:host]
       @product = options[:product]
       @plan = options[:plan]
       @run = options[:run]
