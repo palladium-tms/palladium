@@ -3,10 +3,11 @@ require 'net/http'
 require 'json'
 module Palladium
   def self.new(options = {})
-   Palladium.new(options)
+    Palladium.new(options)
   end
 
   class Palladium
+    attr_reader :host, :product, :plan, :run, :run_id
     def initialize(options = {})
       options[:port] ||= 80
       @http = Net::HTTP.new(options[:host], options[:port])
