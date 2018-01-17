@@ -1,3 +1,3 @@
 module Palladium
-  VERSION = '0.1.6'.freeze
+  VERSION = '0.2.0'.freeze
 end
