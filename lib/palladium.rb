@@ -39,7 +39,7 @@ module Palladium
         @run_id = result['run']['id']
         @product_id ||= result['product']['id']
         @plan_id ||= result['plan']['id']
-        @result_set_id ||= result['result_set']['id']
+        @result_set_id ||= result['result_sets'][0]['id']
       end
       result
     end
