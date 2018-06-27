@@ -48,9 +48,9 @@ module Palladium
       request = Net::HTTP::Post.new('/api/result_sets_by_status', 'Authorization' => @token, 'Content-Type' => 'application/json')
       request.body = { product_name: @product, plan_name: @plan, run_name: @run, status: status }.to_json
       result = JSON.parse(@http.request(request).body)
-      @run_id = result['run']['id']
-      @product_id ||= result['product']['id']
-      @plan_id ||= result['plan']['id']
+      @run_id = result['run']['id'] if result['run']
+      @product_id ||= result['product']['id'] if result['product']
+      @plan_id ||= result['plan']['id'] if result['plan']
       result['result_sets']
     end
   end
