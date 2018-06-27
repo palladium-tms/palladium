@@ -43,5 +43,15 @@ module Palladium
       end
       result
     end
+
+    def get_result_sets(status)
+      request = Net::HTTP::Post.new('/api/result_sets_by_status', 'Authorization' => @token, 'Content-Type' => 'application/json')
+      request.body = { product_name: @product, plan_name: @plan, run_name: @run, status: status }.to_json
+      result = JSON.parse(@http.request(request).body)
+      @run_id = result['run']['id']
+      @product_id ||= result['product']['id']
+      @plan_id ||= result['plan']['id']
+      result['result_sets']
+    end
   end
 end
