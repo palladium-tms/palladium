@@ -1,6 +1,8 @@
 # Changelog
 All notable changes to this project will be documented in this file.
-
+## [0.3.2] - 2018-07-27
+### Fixed:
+    - Return result_set_id for for every result, no for first
 ## [0.3.1] - 2018-06-27
 ### Added
     - Add new api method get_result_sets for getting result_sets by status

@@ -34,12 +34,12 @@ module Palladium
         @run_id = result['other_data']['run_id']
         @product_id ||= result['other_data']['product_id']
         @plan_id ||= result['other_data']['plan_id']
-        @result_set_id ||= result['other_data']['result_set_id']
+        @result_set_id = result['other_data']['result_set_id']
       else
         @run_id = result['run']['id']
         @product_id ||= result['product']['id']
         @plan_id ||= result['plan']['id']
-        @result_set_id ||= result['result_sets'][0]['id']
+        @result_set_id = result['result_sets'][0]['id']
       end
       result
     end
