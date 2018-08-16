@@ -1,5 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
+## [0.3.3] - 2018-08-16
+    - Add new attr_reader `result_set_link` for keeping link to result set after result adding
 ## [0.3.2] - 2018-07-27
 ### Fixed:
     - Return result_set_id for for every result, no for first
