@@ -8,7 +8,7 @@ module Palladium
 
   class Palladium
     attr_reader :host, :product, :plan, :run, :product_id,
-                :plan_id, :run_id, :result_set_id, :port
+                :plan_id, :run_id, :result_set_id, :port, :result_set_link
     def initialize(options = {})
       options[:port] ||= 80
       @http = Net::HTTP.new(options[:host], options[:port])
@@ -41,6 +41,7 @@ module Palladium
         @plan_id ||= result['plan']['id']
         @result_set_id = result['result_sets'][0]['id']
       end
+      @result_set_link = result_set_link
       result
     end
 
@@ -52,6 +53,11 @@ module Palladium
       @product_id ||= result['product']['id'] if result['product']
       @plan_id ||= result['plan']['id'] if result['plan']
       result['result_sets']
+    end
+
+    # get link to result set
+    def result_set_link
+      "http#{'s' if @port == 443}://#{@host}/product/#{@product_id}/plan/#{@plan_id}/run/#{@run_id}/result_set/#{@result_set_id}"
     end
   end
 end
