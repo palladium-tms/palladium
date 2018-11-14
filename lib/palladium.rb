@@ -1,6 +1,7 @@
 require 'palladium/version'
 require 'net/http'
 require 'json'
+require 'logger'
 module Palladium
   def self.new(options = {})
     Palladium.new(options)
@@ -10,6 +11,8 @@ module Palladium
     attr_reader :host, :product, :plan, :run, :product_id,
                 :plan_id, :run_id, :result_set_id, :port, :result_set_link
     def initialize(options = {})
+      @logger = Logger.new(STDOUT)
+      @logger.level = options[:log] || 1
       options[:port] ||= 80
       @http = Net::HTTP.new(options[:host], options[:port])
       @host = options[:host]
@@ -42,6 +45,7 @@ module Palladium
         @result_set_id = result['result_sets'][0]['id']
       end
       @result_set_link = result_set_link
+      @logger.info "Palladium: Link to result: #{@result_set_link}"
       result
     end
 

@@ -1,5 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
+## [0.3.4] - 2018-11-14
+    - Add logging. By default, log level = 1 (info). Result link will be printed to stdout
 ## [0.3.3] - 2018-08-16
     - Add new attr_reader `result_set_link` for keeping link to result set after result adding
 ## [0.3.2] - 2018-07-27
