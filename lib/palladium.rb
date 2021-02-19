@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'palladium/name'
 require 'palladium/version'
 require 'net/http'

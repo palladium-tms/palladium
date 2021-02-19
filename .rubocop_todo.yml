@@ -33,19 +33,6 @@ Style/Documentation:
     - 'test/**/*'
     - 'lib/palladium.rb'
 
-# Offense count: 6
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: always, always_true, never
-Style/FrozenStringLiteralComment:
-  Exclude:
-    - 'Gemfile'
-    - 'Rakefile'
-    - 'bin/console'
-    - 'lib/palladium.rb'
-    - 'lib/palladium/name.rb'
-    - 'lib/palladium/version.rb'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/GlobalStdStream:
