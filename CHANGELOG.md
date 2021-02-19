@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 * Add `rubocop` to CI
 * Add `dependabot` support
 * Add `markdownlint` support in CI
+* Add `rake` task for release and description to README
 
 ### Changes
 
