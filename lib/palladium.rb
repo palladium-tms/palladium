@@ -15,7 +15,7 @@ module Palladium
                 :plan_id, :run_id, :result_set_id, :port, :result_set_link
 
     def initialize(options = {})
-      @logger = Logger.new(STDOUT)
+      @logger = Logger.new($stdout)
       @logger.level = options[:log] || 1
       options[:port] ||= 80
       @http = Net::HTTP.new(options[:host], options[:port])
