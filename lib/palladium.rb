@@ -12,7 +12,7 @@ module Palladium
 
   class Palladium
     attr_reader :host, :product, :plan, :run, :product_id,
-                :plan_id, :run_id, :result_set_id, :port, :result_set_link
+                :plan_id, :run_id, :result_set_id, :port
 
     def initialize(options = {})
       @logger = Logger.new($stdout)
