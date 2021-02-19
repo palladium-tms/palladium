@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 
 * Add support of `rubocop` with extensions
 * Add `rubocop` to CI
+* Add `dependabot` support
 
 ### Changes
 
