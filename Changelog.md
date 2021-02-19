@@ -1,5 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
+
+## master (unreleased)
+
+### Changes
+
+* `.idea` folder added to `.gitignore`
+
 ## [0.3.4] - 2018-11-14
     - Add logging. By default, log level = 1 (info). Result link will be printed to stdout
 ## [0.3.3] - 2018-08-16
