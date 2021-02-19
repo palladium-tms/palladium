@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'palladium/name'
 require 'palladium/version'
 require 'net/http'
@@ -10,9 +12,10 @@ module Palladium
 
   class Palladium
     attr_reader :host, :product, :plan, :run, :product_id,
-                :plan_id, :run_id, :result_set_id, :port, :result_set_link
+                :plan_id, :run_id, :result_set_id, :port
+
     def initialize(options = {})
-      @logger = Logger.new(STDOUT)
+      @logger = Logger.new($stdout)
       @logger.level = options[:log] || 1
       options[:port] ||= 80
       @http = Net::HTTP.new(options[:host], options[:port])
@@ -26,7 +29,9 @@ module Palladium
     end
 
     def set_result(options = {})
-      request = Net::HTTP::Post.new('/api/result_new', 'Authorization' => @token, 'Content-Type' => 'application/json')
+      request = Net::HTTP::Post.new('/api/result_new',
+                                    'Authorization' => @token,
+                                    'Content-Type' => 'application/json')
       params = { plan_data: { product_name: @product, name: @plan },
                  run_data: { name: @run },
                  result_set_data: { name: options[:name] },
@@ -51,7 +56,9 @@ module Palladium
     end
 
     def get_result_sets(status)
-      request = Net::HTTP::Post.new('/api/result_sets_by_status', 'Authorization' => @token, 'Content-Type' => 'application/json')
+      request = Net::HTTP::Post.new('/api/result_sets_by_status',
+                                    'Authorization' => @token,
+                                    'Content-Type' => 'application/json')
       request.body = { product_name: @product, plan_name: @plan, run_name: @run, status: status }.to_json
       result = JSON.parse(@http.request(request).body)
       @run_id = result['run']['id'] if result['run']
@@ -62,7 +69,8 @@ module Palladium
 
     # get link to result set
     def result_set_link
-      "http#{'s' if @port == 443}://#{@host}/product/#{@product_id}/plan/#{@plan_id}/run/#{@run_id}/result_set/#{@result_set_id}"
+      "http#{'s' if @port == 443}://#{@host}/product/#{@product_id}/"\
+      "plan/#{@plan_id}/run/#{@run_id}/result_set/#{@result_set_id}"
     end
   end
 end
