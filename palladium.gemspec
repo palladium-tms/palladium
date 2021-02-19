@@ -1,34 +1,26 @@
-# coding: utf-8
+# frozen_string_literal: true
 
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'palladium/version'
+require_relative 'lib/palladium/name'
+require_relative 'lib/palladium/version'
 
-Gem::Specification.new do |spec|
-  spec.name          = 'palladium'
-  spec.version       = Palladium::VERSION
-  spec.authors       = ['Rotatyy Dmitriy']
-  spec.email         = ['flamine@list.ru']
-
-  spec.summary       = 'Write a short summary, because Rubygems requires one.'
-  spec.description   = 'Write a longer description or delete this line.'
-
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise 'RubyGems 2.0 or newer is required to protect against ' \
-      'public gem pushes.'
-  end
-
-  spec.files = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
-  spec.bindir        = 'exe'
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ['lib']
-
-  spec.add_development_dependency 'bundler', '~> 1.15'
-  spec.add_development_dependency 'rake', '~> 10.0'
+Gem::Specification.new do |s|
+  s.name = Palladium::NAME
+  s.version = Palladium::VERSION
+  s.platform = Gem::Platform::RUBY
+  s.required_ruby_version = '>= 2.5'
+  s.authors = ['Rotatyy Dmitriy']
+  s.email = %w[flamine@list.ru]
+  s.summary = 'Gem for using Palladium API'
+  s.description = 'Wrapper gem for usage of Palladium API'
+  s.homepage = "https://github.com/flaminestone/#{s.name}"
+  s.metadata = {
+    'bug_tracker_uri' => "#{s.homepage}/issues",
+    'changelog_uri' => "#{s.homepage}/blob/master/CHANGELOG.md",
+    'documentation_uri' => "https://www.rubydoc.info/gems/#{s.name}",
+    'homepage_uri' => s.homepage,
+    'source_code_uri' => s.homepage
+  }
+  s.files = Dir['lib/**/*']
+  s.license = 'AGPL-3.0'
+  s.add_development_dependency('rake', '~> 13')
 end
