@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 ## master (unreleased)
 
+### New Features
+
+* Add support of `rubocop` with extensions
+* Add `rubocop` to CI
+
 ### Changes
 
 * `.idea` folder added to `.gitignore`
