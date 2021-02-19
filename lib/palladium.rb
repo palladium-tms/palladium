@@ -1,3 +1,4 @@
+require 'palladium/name'
 require 'palladium/version'
 require 'net/http'
 require 'json'

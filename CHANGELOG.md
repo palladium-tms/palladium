@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 ### Changes
 
 * `.idea` folder added to `.gitignore`
+* Cleanup `gemspec` file
 
 ## [0.3.4] - 2018-11-14
     - Add logging. By default, log level = 1 (info). Result link will be printed to stdout
