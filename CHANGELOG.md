@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## master (unreleased)
 
+## 1.0.0 (2021-03-17)
+
 ### New Features
 
 * Add support of `rubocop` with extensions
