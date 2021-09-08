@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## master (unreleased)
 
+### Fixes
+
+* Correct usage of ssl connection
+
+### Changes
+
+* Default port now is 443
+
 ## 1.0.0 (2021-03-17)
 
 ### New Features
