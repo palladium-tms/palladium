@@ -17,10 +17,10 @@ module Palladium
     def initialize(options = {})
       @logger = Logger.new($stdout)
       @logger.level = options[:log] || 1
-      options[:port] ||= 80
-      @http = Net::HTTP.new(options[:host], options[:port])
+      @port = options[:port] || 443
+      @http = Net::HTTP.new(options[:host], @port)
+      @http.use_ssl = true if ssl_connection?
       @host = options[:host]
-      @port = options[:port]
       @product = options[:product]
       @plan = options[:plan]
       @run = options[:run]
@@ -69,8 +69,16 @@ module Palladium
 
     # get link to result set
     def result_set_link
-      "http#{'s' if @port == 443}://#{@host}/product/#{@product_id}/"\
+      "http#{'s' if ssl_connection?}://#{@host}/product/#{@product_id}/"\
         "plan/#{@plan_id}/run/#{@run_id}/result_set/#{@result_set_id}"
+    end
+
+    private
+
+    # Check if connection should be ssl
+    # @return [True, False]
+    def ssl_connection?
+      @port == 443
     end
   end
 end
