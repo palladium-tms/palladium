@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## master (unreleased)
 
+## 1.1.0 (2021-09-08)
+
 ### Fixes
 
 * Correct usage of ssl connection
