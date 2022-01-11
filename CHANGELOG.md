@@ -4,9 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## master (unreleased)
 
+### New Features
+
+* Add `ruby-3.1` to CI
+
 ### Changes
 
 * Require `mfa` for releasing gem
+* Remove `ruby-2.5` from CI since it's EOLed
 
 ## 1.1.0 (2021-09-08)
 
