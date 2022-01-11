@@ -4,7 +4,6 @@ All notable changes to this project will be documented in this file.
 
 ## master (unreleased)
 
-
 ### New Features
 
 * Add `ruby-3.1` to CI
