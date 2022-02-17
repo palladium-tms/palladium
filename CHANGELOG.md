@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 ### New Features
 
 * Add `ruby-3.1` to CI
+* Add `yamllint` check in CI
 
 ### Fixes
 
