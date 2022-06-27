@@ -33,7 +33,7 @@ GEM
     rubocop-rspec (2.10.0)
       rubocop (~> 1.19)
     ruby-progressbar (1.11.0)
-    unicode-display_width (2.1.0)
+    unicode-display_width (2.2.0)
 
 PLATFORMS
   ruby
