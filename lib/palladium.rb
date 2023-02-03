@@ -69,7 +69,7 @@ module Palladium
 
     # get link to result set
     def result_set_link
-      "http#{'s' if ssl_connection?}://#{@host}/product/#{@product_id}/"\
+      "http#{'s' if ssl_connection?}://#{@host}/product/#{@product_id}/" \
         "plan/#{@plan_id}/run/#{@run_id}/result_set/#{@result_set_id}"
     end
 
