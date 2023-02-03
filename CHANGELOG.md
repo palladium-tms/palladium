@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### New Features
 
-* Add `ruby-3.1` to CI
+* Add `ruby-3.1` and `ruby-3.2` to CI
 * Add `yamllint` check in CI
 
 ### Fixes
@@ -16,8 +16,8 @@ All notable changes to this project will be documented in this file.
 ### Changes
 
 * Require `mfa` for releasing gem
-* Remove `ruby-2.5` from CI since it's EOLed
 * Check `dependabot` at 8:00 Moscow time daily
+* Remove support of `ruby-2.5` and `ruby-2.6` since they are EOL'ed
 
 ## 1.1.0 (2021-09-08)
 
