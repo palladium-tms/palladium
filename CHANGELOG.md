@@ -18,6 +18,7 @@ All notable changes to this project will be documented in this file.
 * Require `mfa` for releasing gem
 * Check `dependabot` at 8:00 Moscow time daily
 * Remove support of `ruby-2.5` and `ruby-2.6` since they are EOL'ed
+* Drop `ruby-2.7` support since it's EOL'ed
 
 ## 1.1.0 (2021-09-08)
 
