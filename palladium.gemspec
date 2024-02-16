@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.name = Palladium::NAME
   s.version = Palladium::VERSION
   s.platform = Gem::Platform::RUBY
-  s.required_ruby_version = '>= 2.7'
+  s.required_ruby_version = '>= 3.0'
   s.authors = ['Rotatyy Dmitriy']
   s.email = %w[flamine@list.ru]
   s.summary = 'Gem for using Palladium API'
