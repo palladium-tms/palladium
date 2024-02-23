@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 * Add `dependabot` check for `GitHub Actions`
 * Add several rspec tests
 * Add `codecov` support
+* Add check that all code is documented
 
 ### Fixes
 
