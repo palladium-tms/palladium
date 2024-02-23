@@ -11,11 +11,18 @@ def update_instance_vars(palladium)
   palladium.instance_variable_set(:@result_set_id, 999)
 end
 
-def create_http_double
+def http_double_body_with_other
+  '{"other_data": {"run_id": 123, "product_id": 456, "plan_id": 789, "result_set_id": 999}}'
+end
+
+def http_double_body_without_other
+  '{"run": {"id": 123}, "product": {"id": 456}, "plan": {"id": 789}, "result_sets": [{"id": 999}]}'
+end
+
+def create_http_double(body)
   http_double = instance_double(Net::HTTP)
   allow(Net::HTTP).to receive(:new).and_return(http_double)
   allow(http_double).to receive(:use_ssl=)
-  body = '{"other_data": {"run_id": 123, "product_id": 456, "plan_id": 789, "result_set_id": 999}}'
   allow(http_double).to receive(:request).and_return(instance_double('response',
                                                                      body: body))
 end
