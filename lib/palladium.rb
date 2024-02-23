@@ -5,14 +5,21 @@ require 'palladium/version'
 require 'net/http'
 require 'json'
 require 'logger'
+
+# Module for whole project code
 module Palladium
+  # Method to create new instance of Palladium
+  # @param [Hash] options
+  # @return [Palladium] new instance of Palladium
   def self.new(options = {})
     Palladium.new(options)
   end
 
+  # Class to work with Palladium RestAPI
   class Palladium
     attr_reader :host, :product, :plan, :run, :product_id,
                 :plan_id, :run_id, :result_set_id, :port
+
 
     def initialize(options = {})
       @logger = Logger.new($stdout)
@@ -28,6 +35,12 @@ module Palladium
       @product_id, @run_id, @plan_id, @result_set_id = nil
     end
 
+    # Method to set palladium results
+    # @param [Hash] options
+    # @option options [String] :name Name of result set
+    # @option options [String] :description Description of result
+    # @option options [String] :status Status of result
+    # @return [Hash] result
     def set_result(options = {})
       request = Net::HTTP::Post.new('/api/result_new',
                                     'Authorization' => @token,
@@ -55,6 +68,9 @@ module Palladium
       result
     end
 
+    # Method to get result sets by status
+    # @param [String] status Status of result set
+    # @return [Array] result sets
     def get_result_sets(status)
       request = Net::HTTP::Post.new('/api/result_sets_by_status',
                                     'Authorization' => @token,
@@ -68,6 +84,7 @@ module Palladium
     end
 
     # get link to result set
+    # @return [String] link to result set
     def result_set_link
       "http#{'s' if ssl_connection?}://#{@host}/product/#{@product_id}/" \
         "plan/#{@plan_id}/run/#{@run_id}/result_set/#{@result_set_id}"

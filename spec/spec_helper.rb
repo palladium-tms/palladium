@@ -13,14 +13,21 @@ def update_instance_vars(palladium)
   palladium.instance_variable_set(:@result_set_id, 999)
 end
 
+# Method to create http double with body
+# @return [String]
 def http_double_body_with_other
   '{"other_data": {"run_id": 123, "product_id": 456, "plan_id": 789, "result_set_id": 999}}'
 end
 
+# Method to create http double with body with other
+# @return [String]
 def http_double_body_without_other
   '{"run": {"id": 123}, "product": {"id": 456}, "plan": {"id": 789}, "result_sets": [{"id": 999}]}'
 end
 
+# Method to create http double with body
+# @param [String] body
+# @return [Net::HTTP]
 def create_http_double(body)
   http_double = instance_double(Net::HTTP)
   allow(Net::HTTP).to receive(:new).and_return(http_double)
