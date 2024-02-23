@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require 'simplecov'
+SimpleCov.start
+
 # Method to update instance variables of Palladium class
 def update_instance_vars(palladium)
   palladium.instance_variable_set(:@product_id, 456)

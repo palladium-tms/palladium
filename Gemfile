@@ -17,4 +17,5 @@ end
 
 group :test do
   gem 'rspec', '~> 3'
+  gem 'simplecov', '~> 0', require: false
 end
