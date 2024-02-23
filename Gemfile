@@ -13,6 +13,7 @@ group :development do
   gem 'rubocop-performance', '~> 1'
   gem 'rubocop-rake', '~> 0'
   gem 'rubocop-rspec', '~> 2'
+  gem 'rubocop-packaging', '~> 0'
 end
 
 group :test do
