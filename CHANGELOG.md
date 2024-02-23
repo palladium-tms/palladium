@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 
 * Add `ruby-3.1` and `ruby-3.2` to CI
 * Add `yamllint` check in CI
+* Add `dependabot` check for `GitHub Actions`
 
 ### Fixes
 
