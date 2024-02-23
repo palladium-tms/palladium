@@ -13,7 +13,7 @@ RSpec.describe Palladium do
     before do
       allow(Net::HTTP).to receive(:new).and_return(http_double)
       allow(http_double).to receive(:use_ssl=)
-      allow(http_double).to receive(:request).and_return(instance_double(response, body: response_body))
+      allow(http_double).to receive(:request).and_return(instance_double('response', body: response_body))
     end
 
     it 'sends a request to get result sets' do

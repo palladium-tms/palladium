@@ -13,6 +13,6 @@ def create_http_double
   allow(Net::HTTP).to receive(:new).and_return(http_double)
   allow(http_double).to receive(:use_ssl=)
   body = '{"other_data": {"run_id": 123, "product_id": 456, "plan_id": 789, "result_set_id": 999}}'
-  allow(http_double).to receive(:request).and_return(instance_double(response,
+  allow(http_double).to receive(:request).and_return(instance_double('response',
                                                                      body: body))
 end
