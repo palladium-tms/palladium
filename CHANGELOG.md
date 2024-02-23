@@ -10,7 +10,6 @@ All notable changes to this project will be documented in this file.
 * Add `yamllint` check in CI
 * Add `dependabot` check for `GitHub Actions`
 * Add several rspec tests
-* Add `rubocop-packaging` support
 
 ### Fixes
 
