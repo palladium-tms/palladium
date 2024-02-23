@@ -71,14 +71,11 @@ module Palladium
     # @param [String] status Status of result set
     # @return [Array] result sets
     def get_result_sets(status)
-      request = Net::HTTP::Post.new('/api/result_sets_by_status',
-                                    'Authorization' => @token,
-                                    'Content-Type' => 'application/json')
-      request.body = { product_name: @product, plan_name: @plan, run_name: @run, status: status }.to_json
+      request = create_request_to_get_results_sets(status)
       result = JSON.parse(@http.request(request).body)
-      @run_id = result['run']['id'] if result['run']
-      @product_id ||= result['product']['id'] if result['product']
-      @plan_id ||= result['plan']['id'] if result['plan']
+      @run_id ||= result.dig('run', 'id')
+      @product_id ||= result.dig('product', 'id')
+      @plan_id ||= result.dig('plan', 'id')
       result['result_sets']
     end
 
@@ -95,6 +92,19 @@ module Palladium
     # @return [True, False]
     def ssl_connection?
       @port == 443
+    end
+
+    # Create request to get result sets
+    # @param [String] status Status of result set
+    # @return [Net::HTTP::Post] request
+    def create_request_to_get_results_sets(status)
+      Net::HTTP::Post.new(
+        '/api/result_sets_by_status',
+        'Authorization' => @token,
+        'Content-Type' => 'application/json'
+      ).tap do |request|
+        request.body = { product_name: @product, plan_name: @plan, run_name: @run, status: status }.to_json
+      end
     end
   end
 end
