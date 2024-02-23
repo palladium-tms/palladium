@@ -20,7 +20,6 @@ module Palladium
     attr_reader :host, :product, :plan, :run, :product_id,
                 :plan_id, :run_id, :result_set_id, :port
 
-
     def initialize(options = {})
       @logger = Logger.new($stdout)
       @logger.level = options[:log] || 1
