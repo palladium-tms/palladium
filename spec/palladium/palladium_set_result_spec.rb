@@ -80,7 +80,7 @@ RSpec.describe Palladium do
     end
   end
 
-  describe 'non_emtpy_run_id' do
+  describe 'non empty run_id also returns data' do
     it 'returns data' do
       create_http_double(http_double_body_with_other)
       palladium = described_class.new(host: 'example.com', port: 443)
