@@ -14,3 +14,7 @@ group :development do
   gem 'rubocop-rake', '~> 0'
   gem 'rubocop-rspec', '~> 2'
 end
+
+group :test do
+  gem 'rspec', '~> 3'
+end
