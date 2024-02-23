@@ -79,4 +79,14 @@ RSpec.describe Palladium do
       end
     end
   end
+
+  describe 'non_emtpy_run_id' do
+    it 'returns data' do
+      create_http_double(http_double_body_with_other)
+      palladium = described_class.new(host: 'example.com', port: 443)
+      update_instance_vars(palladium)
+      result = palladium.set_result(options)
+      expect(result['other_data']['run_id']).to eq(123)
+    end
+  end
 end
