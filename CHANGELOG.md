@@ -47,6 +47,7 @@ All notable changes to this project will be documented in this file.
 * Add `rake` task for release and description to README
 
 ### Changes
+
 * `.idea` folder added to `.gitignore`
 * Cleanup `gemspec` file
 
