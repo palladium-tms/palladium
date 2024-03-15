@@ -32,6 +32,5 @@ def create_http_double(body)
   http_double = instance_double(Net::HTTP)
   allow(Net::HTTP).to receive(:new).and_return(http_double)
   allow(http_double).to receive(:use_ssl=)
-  allow(http_double).to receive(:request).and_return(instance_double('response',
-                                                                     body: body))
+  allow(http_double).to receive(:request).and_return(instance_double(Net::HTTPResponse, body: body))
 end
