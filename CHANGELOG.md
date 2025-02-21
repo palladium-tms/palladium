@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file.
 * Add several rspec tests
 * Add `codecov` support
 * Add check that all code is documented
+* Add `logger` dependency to fix `ruby-3.5`
 
 ### Fixes
 
