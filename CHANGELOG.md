@@ -18,6 +18,7 @@ All notable changes to this project will be documented in this file.
 ### Fixes
 
 * Fix `markdownlint` failure because of old `nodejs` in CI
+* Run `rubocop` and `rspec` in CI through `bundle exec`
 
 ### Changes
 
