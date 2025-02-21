@@ -23,5 +23,5 @@ Gem::Specification.new do |s|
   }
   s.files = Dir['lib/**/*']
   s.license = 'AGPL-3.0'
-  s.add_runtime_dependency 'logger', '~> 1'
+  s.add_dependency 'logger', '~> 1'
 end
