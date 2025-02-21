@@ -14,10 +14,12 @@ All notable changes to this project will be documented in this file.
 * Add several rspec tests
 * Add `codecov` support
 * Add check that all code is documented
+* Add `logger` dependency to fix `ruby-3.5`
 
 ### Fixes
 
 * Fix `markdownlint` failure because of old `nodejs` in CI
+* Run `rubocop` and `rspec` in CI through `bundle exec`
 
 ### Changes
 
